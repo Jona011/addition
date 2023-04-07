@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char choice;
+    double num, sum = 0;
+    int count = 0;
+
+    printf("Enter 'a' to calculate the average: ");
+    scanf("%c", &choice);
+
+    if (choice == 'a') {
+        printf("Enter numbers (press any letter to stop):\n");
+
+        while (scanf("%lf", &num) == 1) {
+            sum += num;
+            count++;
+        }
+
+        if (count > 0) {
+            double average = sum / count;
+            printf("Average is %.2lf\n", average);
+        } else {
+            printf("No numbers entered\n");
+        }
+    } else {
+        printf("Invalid choice\n");
+    }
+
+    return 0;
+}
